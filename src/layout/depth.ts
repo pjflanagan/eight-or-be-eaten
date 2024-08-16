@@ -1,0 +1,8 @@
+
+export enum Depth {
+  BASE_IMAGE_WATER = 0,
+  BACKGROUND_CORAL,
+  BACKGROUND_BUBBLES,
+  GAME_LAYER,
+  UI
+}
