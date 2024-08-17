@@ -1,14 +1,14 @@
-import { GameScene } from "../scene";
+// import { GameScene } from "../scene";
 import { CutScene, CutSceneEventType, CutSceneSequence } from "./types";
 
 export const CUT_SCENE_INACTIVE = -1;
 
 export class CutSceneManager {
-  private scene: GameScene;
+  // private scene: GameScene;
   private activeCutScene: CutScene;
 
-  constructor(scene: GameScene) {
-    this.scene = scene;
+  constructor() { // scene: GameScene
+    // this.scene = scene;
     this.activeCutScene = {
       stage: CUT_SCENE_INACTIVE,
       sequence: []

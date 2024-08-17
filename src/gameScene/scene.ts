@@ -25,7 +25,7 @@ export class GameScene extends Phaser.Scene {
     this.audioManager = new AudioManager(this);
     this.objectManager = new ObjectManager(this);
     this.interactionManager = new InteractionManager(this);
-    this.cutSceneManager = new CutSceneManager(this);
+    this.cutSceneManager = new CutSceneManager();
     this.cameraManager = new CameraManager(this);
     this.uiManager = new UIManager(this);
   }
@@ -70,6 +70,7 @@ export class GameScene extends Phaser.Scene {
     return {
       interactionManager: this.interactionManager,
       cutSceneManager: this.cutSceneManager,
+      graphicsManager: this.graphicsManager,
       objectManager: this.objectManager,
       cameraManager: this.cameraManager,
       gameManager: this.gameManager,
@@ -83,6 +84,10 @@ export class GameScene extends Phaser.Scene {
 
   getCutSceneManager(): CutSceneManager {
     return this.cutSceneManager;
+  }
+
+  getGraphicsManager(): GraphicsManager {
+    return this.graphicsManager;
   }
 
   getObjectManager(): ObjectManager {

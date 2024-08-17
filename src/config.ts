@@ -10,10 +10,7 @@ export const config: Phaser.Types.Core.GameConfig = {
     height: GAME_HEIGHT,
     mode: Phaser.Scale.RESIZE,
     physics: {
-        default: 'arcade',
-        arcade: {
-            debug: false
-        }
+        default: 'matter',
     },
     pixelArt: false,
     render: {

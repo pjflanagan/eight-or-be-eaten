@@ -1,28 +1,37 @@
+import { FishSpriteName } from '../objectsManager';
 
 export enum Image {
   WATER = 'water',
   CORAL = 'coral',
 }
 
-export enum Sprite {
-  FISH = 'fish',
-}
-
-// General
-
-type SpriteFrameCountMap = {
-  [graphicName in Sprite]: number;
-}
-
-const SPRITE_FRAME_COUNT_MAP: SpriteFrameCountMap = {
-  [Sprite.FISH]: 8,
-}
-
-export function getFrame(spriteName: Sprite, row: number, col: number | 'start' | 'end' = 'start') {
-  const frameCount = SPRITE_FRAME_COUNT_MAP[spriteName];
+export function getFrame(frameCount: number, row: number, col: number | 'start' | 'end' = 'start') {
   const colIndex = col === 'start' ? 0 : col === 'end' ? frameCount - 1 : col; 
-  if (colIndex >= frameCount) {
-    throw `No frame found for ${col} on ${spriteName}`;
-  }
   return frameCount * row + colIndex;
+}
+
+type GenerateFrameNumbersParams = {
+  animationManager: Phaser.Animations.AnimationManager,
+  spriteName: FishSpriteName,
+  frameCount: number,
+  row: number,
+  startCol?: number | 'start' | 'end',
+  endCol?: number | 'start' | 'end',
+}
+
+export function generateFrameNumbers({
+  animationManager,
+  spriteName,
+  row,
+  frameCount,
+  startCol = 'start',
+  endCol = 'end'
+}: GenerateFrameNumbersParams) {
+  return animationManager.generateFrameNumbers(
+    spriteName,
+    {
+      start: getFrame(frameCount, row, startCol),
+      end: getFrame(frameCount, row, endCol)
+    }
+  )
 }

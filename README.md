@@ -1,7 +1,7 @@
 
-# Octopus
+# 8 Or Be Eaten
 
-The Octopus game is simple, catch enough food to stay alive while avoiding predators. You are an octopus perched
+8 Or Be Eaten is simple, catch enough food to stay alive while avoiding predators. You are an octopus perched
 on an undersea cliff. Uncurl your many tentacles to reach down into the abyss and catch your prey, but watch out
 sharks lurk in these waters and they can tear you limb from limb. 
 
