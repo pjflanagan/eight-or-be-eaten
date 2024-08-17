@@ -1,4 +1,4 @@
-import { generateFrameNumbers } from '../../graphicsManager';
+// import { generateFrameNumbers } from '../../graphicsManager';
 // import { GameScene } from '../../scene';
 
 export enum FishSpriteName {
@@ -7,17 +7,17 @@ export enum FishSpriteName {
   LARGE = 'large-fish'
 }
 
-enum FishAnimationName {
-  DIE = 'die',
-  SWIM = 'swim',
-  TURN = 'turn',
-  FLEE = 'flee', // swim but faster
-} 
+// enum FishAnimationName {
+//   DIE = 'die',
+//   SWIM = 'swim',
+//   TURN = 'turn',
+//   FLEE = 'flee', // swim but faster
+// } 
 
-type FishAnimationKey = `${FishSpriteName}-${FishAnimationName}-${number}`;
+// type FishAnimationKey = `${FishSpriteName}-${FishAnimationName}-${number}`;
 
-const FISH_FRAMES = 8;
-const FISH_ROWS = 10;
+// const FISH_FRAMES = 8;
+// const FISH_ROWS = 10;
 
 export class Fish extends Phaser.GameObjects.Sprite {
   // private spriteRow: number;
@@ -31,29 +31,29 @@ export class Fish extends Phaser.GameObjects.Sprite {
   // }
 
   // TODO: this function will create all animations associated with fish
-  static createAnimations(animationManager: Phaser.Animations.AnimationManager) {
-    Object.values(FishSpriteName).forEach((spriteName: FishSpriteName) => {
-      // TODO: might not do a forEach over the FishAnimationName because each animation is different
-      Object.values(FishAnimationName).forEach((animationName: FishAnimationName) => {
-        for (let row = 0; row < FISH_ROWS; ++row) {
-          const animationKey: FishAnimationKey = `${spriteName}-${animationName}-${row}`;
-          animationManager.create({
-            key: animationKey,
-            frames: generateFrameNumbers({
-              animationManager,
-              spriteName,
-              row,
-              frameCount: FISH_FRAMES,
-            }),
-            // TODO: some of these are faster
-            frameRate: 9,
-            // TODO: some of these don't repeat
-            repeat: -1
-          });
-        }
-      });
-    });
-  }
+  // static createAnimations(animationManager: Phaser.Animations.AnimationManager) {
+  //   Object.values(FishSpriteName).forEach((spriteName: FishSpriteName) => {
+  //     // TODO: might not do a forEach over the FishAnimationName because each animation is different
+  //     Object.values(FishAnimationName).forEach((animationName: FishAnimationName) => {
+  //       for (let row = 0; row < FISH_ROWS; ++row) {
+  //         const animationKey: FishAnimationKey = `${spriteName}-${animationName}-${row}`;
+  //         animationManager.create({
+  //           key: animationKey,
+  //           frames: generateFrameNumbers({
+  //             animationManager,
+  //             spriteName,
+  //             row,
+  //             frameCount: FISH_FRAMES,
+  //           }),
+  //           // TODO: some of these are faster
+  //           frameRate: 9,
+  //           // TODO: some of these don't repeat
+  //           repeat: -1
+  //         });
+  //       }
+  //     });
+  //   });
+  // }
 }
 
 // export class LargeFish extends Fish {

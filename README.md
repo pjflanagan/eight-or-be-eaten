@@ -36,3 +36,4 @@ For now, commit everything in the `dist` folder. We are just deploying to Github
 See:
 - https://www.fesliyanstudios.com/policy
 - Free Music Archive
+Ideas: https://www.fesliyanstudios.com/royalty-free-music-downloads-t/8-bit-music/6 (see 8 bit nostalgia)

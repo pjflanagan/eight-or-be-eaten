@@ -27,17 +27,21 @@ export class Arm {
     // this.frontSide = graphicsManager.createGraphicsGameObject();
     // this.backSide = graphicsManager.createGraphicsGameObject();
 
-    this.basePoint = scene.matter.add.circle(300, 0, 0, { ignoreGravity: true });
+    console.log('add base')
+    this.basePoint = scene.matter.add.circle(300, 0, 0, { ignoreGravity: true, mass: 500 });
 
-    this.controlPoint1 = scene.matter.add.circle(300, 100, 0);
-    scene.matter.add.joint(this.basePoint, this.controlPoint1);
+    console.log('add control point 1')
+    this.controlPoint1 = scene.matter.add.circle(300, 100, 0, { mass: 0.4 });
+    console.log('join')
+    scene.matter.add.joint(this.basePoint, this.controlPoint1, 100, 0.8);
 
-    this.controlPoint2 = scene.matter.add.circle(300, 200, 0);
-    scene.matter.add.joint(this.controlPoint1, this.controlPoint2);
+    // this.controlPoint2 = scene.matter.add.circle(300, 200, 0);
+    // scene.matter.add.joint(this.controlPoint1, this.controlPoint2);
 
-    this.endPoint = scene.matter.add.circle(300, 300, 0);
-    scene.matter.add.joint(this.controlPoint2, this.endPoint);
+    // this.endPoint = scene.matter.add.circle(300, 300, 0);
+    // scene.matter.add.joint(this.controlPoint2, this.endPoint);
 
+    console.log('spring')
     scene.matter.add.mouseSpring();
   }
 

@@ -42,9 +42,9 @@ export class GameScene extends Phaser.Scene {
     this.interactionManager.createCursorKeys();
     this.graphicsManager.createAnimations();
 
-    this.audioManager.createTrackList();
-    this.audioManager.setMute(true);
-    this.audioManager.playTrack();
+    // this.audioManager.createTrackList();
+    // this.audioManager.setMute(true);
+    // this.audioManager.playTrack();
 
     if (DEBUG_CONFIG?.grid) {
       // this.add.grid(OFFSET, OFFSET, WIDTH, HEIGHT, TILE, TILE, undefined, undefined, 0x057605, 0.1).setOrigin(0);

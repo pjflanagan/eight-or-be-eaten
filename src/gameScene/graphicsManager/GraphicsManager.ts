@@ -1,6 +1,6 @@
-import { Fish } from "../objectsManager";
+// import { Fish } from "../objectsManager";
 import { GameScene } from "../scene";
-import { Image } from "./graphics";
+// import { Image } from "./graphics";
 
 export class GraphicsManager {
   private scene: GameScene;
@@ -10,7 +10,9 @@ export class GraphicsManager {
   }
 
   preload() {
-    this.scene.load.image(Image.WATER, './assets/images/background-sky.png');
+    // Object.values(Image).forEach((imageName) => {
+    //   this.scene.load.image(imageName, [`assets/images/${imageName}.webp`,]);
+    // });
     // this.scene.load.spritesheet(Sprite.SMALL_FISH, './assets/images/fish.png', { frameWidth: FISH_SMALL_WIDTH, frameHeight: FISH_SMALL_HEIGHT });
   }
 
@@ -23,6 +25,6 @@ export class GraphicsManager {
   }
 
   createAnimations() {
-    Fish.createAnimations(this.getAnimationManager());
+    // Fish.createAnimations(this.getAnimationManager());
   }
 }

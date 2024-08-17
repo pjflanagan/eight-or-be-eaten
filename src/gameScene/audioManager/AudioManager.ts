@@ -1,19 +1,13 @@
 import { GameScene } from "../scene";
 
-enum Track {
-  LOUNGE_BOSSA = 'lounge-bossa',
-  ELEVATOR_DREAMIN = 'elevator-dreamin'
+enum TrackName {
+  TITLE = 'song-title',
 }
-
-const TRACKS: Track[] = [
-  Track.LOUNGE_BOSSA,
-  Track.ELEVATOR_DREAMIN
-];
 
 type SoundPlayer = Phaser.Sound.NoAudioSound | Phaser.Sound.HTML5AudioSound | Phaser.Sound.WebAudioSound;
 
 type TrackList = {
-  [key in Track]: SoundPlayer
+  [key in TrackName]: SoundPlayer
 }
 
 export class AudioManager {
@@ -26,15 +20,20 @@ export class AudioManager {
     this.tracklist = {} as TrackList;
   }
   preload() {
-    this.scene.load.audio(Track.LOUNGE_BOSSA, ['assets/audio/lounge-bossa.mp3',]);
-    this.scene.load.audio(Track.ELEVATOR_DREAMIN, ['assets/audio/elevator-dreamin.mp3',]);
+    // this.getTrackNames().forEach((trackName) => {
+    //   this.scene.load.audio(trackName, [`assets/audio/${trackName}.mp3`,]);
+    // });
   }
 
   createTrackList() {
     const playRandomTrack = this.playRandomTrack.bind(this);
-    TRACKS.forEach((track) => {
-      this.tracklist[track] = this.scene.sound.add(track).on('complete', playRandomTrack);
+    this.getTrackNames().forEach((trackName) => {
+      this.tracklist[trackName] = this.scene.sound.add(trackName).on('complete', playRandomTrack);
     });
+  }
+
+  getTrackNames(): TrackName[] {
+    return Object.values(TrackName);
   }
 
   isMuted(): boolean {
@@ -51,11 +50,12 @@ export class AudioManager {
   }
 
   playRandomTrack() {
-    const randomTrack = TRACKS[Math.floor(Math.random() * TRACKS.length)]!;
+    const trackNames = this.getTrackNames();
+    const randomTrack = trackNames[Math.floor(Math.random() * trackNames.length)]!;
     this.tracklist[randomTrack].play();
   }
 
-  playTrack(track?: Track) {
+  playTrack(track?: TrackName) {
     if (!track) {
       this.playRandomTrack();
       return;
