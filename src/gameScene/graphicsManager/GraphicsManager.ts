@@ -1,12 +1,12 @@
-import { MainScene } from "../scene";
+import { GameScene } from "../scene";
 import { createAnimations } from "./createAnimations";
 import { Image } from "./graphics";
 
 export class GraphicsManager {
-  private scene: MainScene;
+  private scene: GameScene;
 
 
-  constructor(scene: MainScene) {
+  constructor(scene: GameScene) {
     this.scene = scene;
   }
 
@@ -15,7 +15,11 @@ export class GraphicsManager {
     // this.scene.load.spritesheet(Sprite.SMALL_FISH, './assets/images/fish.png', { frameWidth: FISH_SMALL_WIDTH, frameHeight: FISH_SMALL_HEIGHT });
   }
 
+  getAnims(): Phaser.Animations.AnimationManager {
+    return this.scene.anims;
+  }
+
   createAnimations() {
-    createAnimations(this.scene);
+    createAnimations(this);
   }
 }

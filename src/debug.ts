@@ -1,4 +1,4 @@
-import { Phase } from './gameManager';
+import { Phase } from './gameScene/gameManager';
 
 type DebugConfig = {
   startPhase: Phase;

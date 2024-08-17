@@ -1,4 +1,4 @@
-import { MainScene } from "../scene";
+import { GameScene } from "../gameScene/scene";
 
 type InputDirection = 'up' | 'down' | 'left' | 'right';
 type WASDKey = 'W' | 'A' | 'S' | 'D';
@@ -18,10 +18,10 @@ const WASDMap: { [key in InputDirection]: WASDKey } = {
 }
 
 export class InteractionManager {
-  private scene: MainScene;
+  private scene: GameScene;
   private cursors: Phaser.Types.Input.Keyboard.CursorKeys & WASDCursors;
 
-  constructor(scene: MainScene) {
+  constructor(scene: GameScene) {
     this.scene = scene;
   }
 

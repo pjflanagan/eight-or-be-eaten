@@ -1,6 +1,8 @@
 import Phaser from "phaser";
-import { MainScene } from "./scene";
-import { GAME_WIDTH, GAME_HEIGHT } from "./layout";
+import { GameScene } from "./gameScene/scene";
+
+export const GAME_WIDTH = 800;
+export const GAME_HEIGHT = 600;
 
 export const config: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
@@ -17,5 +19,10 @@ export const config: Phaser.Types.Core.GameConfig = {
     render: {
         antialias: false,
     },
-    scene: MainScene
+    scene: [
+        // TitleScene,
+        // InstructionsScene,
+        GameScene,
+        // EndScene
+    ]
 };

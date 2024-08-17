@@ -1,5 +1,11 @@
 
-# Game
+# Octopus
+
+The Octopus game is simple, catch enough food to stay alive while avoiding predators. You are an octopus perched
+on an undersea cliff. Uncurl your many tentacles to reach down into the abyss and catch your prey, but watch out
+sharks lurk in these waters and they can tear you limb from limb. 
+
+Control the limbs with 1-8 and Q-I. Press space to use your emergency ink.
 
 ## Dev
 

@@ -1,4 +1,4 @@
-import { MainScene } from "../scene";
+import { GameScene } from "../scene";
 
 enum Track {
   LOUNGE_BOSSA = 'lounge-bossa',
@@ -17,11 +17,11 @@ type TrackList = {
 }
 
 export class AudioManager {
-  private scene: MainScene;
+  private scene: GameScene;
 
   private tracklist: TrackList;
 
-  constructor(scene: MainScene) {
+  constructor(scene: GameScene) {
     this.scene = scene;
     this.tracklist = {} as TrackList;
   }

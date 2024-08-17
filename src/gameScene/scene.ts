@@ -1,14 +1,14 @@
+import { DEBUG_CONFIG } from '../debug';
 import { GameManager, Phase } from "./gameManager";
 import { GraphicsManager } from './graphicsManager';
-import { DEBUG_CONFIG } from './debug';
 import { CutSceneManager } from './cutSceneManager';
-import { InteractionManager } from './interactionManager/InteractionManager';
-import { ObjectManager } from './objectsManager/ObjectManager';
+import { InteractionManager } from './interactionManager';
+import { ObjectManager } from './objectsManager';
 import { CameraManager } from './cameraManager/CameraManager';
-import { UIManager } from './uiManager';
 import { AudioManager } from './audioManager';
+import { UIManager } from "./uiManager";
 
-export class MainScene extends Phaser.Scene {
+export class GameScene extends Phaser.Scene {
   private gameManager: GameManager;
   private objectManager: ObjectManager;
   private interactionManager: InteractionManager;
@@ -55,21 +55,16 @@ export class MainScene extends Phaser.Scene {
   update() {
     switch (this.gameManager.getPhase()) {
       case Phase.GAME_START:
-        this.gameManager.setGamePhase(Phase.GAME_SETUP);
-        break;
-      case Phase.GAME_SETUP:
+        // TODO: do an intro animation 
         this.gameManager.setGamePhase(Phase.GAME_PLAY);
         break;
       case Phase.GAME_PLAY:
+        // TODO: play the game
         break;
       case Phase.GAME_END:
-        this.gameManager.setGamePhase(Phase.GAME_SETUP);
+        // TODO: start the EndScene
         break;
     }
-  }
-
-  getAnims(): Phaser.Animations.AnimationManager {
-    return this.anims;
   }
 
   getManagers() {
@@ -99,15 +94,15 @@ export class MainScene extends Phaser.Scene {
     return this.cameraManager;
   }
 
+  getAudioManager(): AudioManager {
+    return this.audioManager;
+  }
+
   getGameManager(): GameManager {
     return this.gameManager;
   }
 
   getUIManager(): UIManager {
     return this.uiManager;
-  }
-
-  getAudioManager(): AudioManager {
-    return this.audioManager;
   }
 }

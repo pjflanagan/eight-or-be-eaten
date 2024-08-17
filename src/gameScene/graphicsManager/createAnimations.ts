@@ -1,4 +1,4 @@
-import { MainScene } from "../scene";
+import { GraphicsManager } from './GraphicsManager';
 
 // function generateFrameNumbers(
 //   anims: Phaser.Animations.AnimationManager,
@@ -15,9 +15,8 @@ import { MainScene } from "../scene";
 //   )
 // }
 
-export function createAnimations(scene: MainScene): void {
-  const anims = scene.getAnims();
-
+export function createAnimations(graphicsManager: GraphicsManager): void {
+  const anims = graphicsManager.getAnims();
   // anims.create({
   //   key: PlayerAnimations.RIGHT,
   //   frames: generateFrameNumbers(anims, Sprite.PLAYER, 0),

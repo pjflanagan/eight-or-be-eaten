@@ -1,12 +1,12 @@
-import { MainScene } from "../scene";
-import { GAME_HEIGHT, GAME_WIDTH, getXPos, getYPos } from "../layout";
+import { GameScene } from "../scene";
+import { GAME_HEIGHT, GAME_WIDTH, getXPos, getYPos } from "../../layout";
 import { CAMERA_PAN_DURATION } from "../cutSceneManager";
-import { PlayerObject } from "../objectsManager";
+import { PlayerObject } from "../../objectsManager";
 
 export class CameraManager {
-  private scene: MainScene;
+  private scene: GameScene;
   
-  constructor(scene: MainScene) {
+  constructor(scene: GameScene) {
     this.scene = scene;
   }
 
