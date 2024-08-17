@@ -1,0 +1,13 @@
+html, body {
+  margin: 0 auto;
+  background: #1c1c1c;
+}
+
+canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=style.css.map */

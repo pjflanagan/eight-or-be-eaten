@@ -1,4 +1,4 @@
-import { GameScene } from "../gameScene/scene";
+import { GameScene } from "../scene";
 
 export class ObjectManager {
   private scene: GameScene;
@@ -12,7 +12,6 @@ export class ObjectManager {
   }
 
   public createObjects() {
-
     this.fish = this.scene.physics.add.group();
     this.sharks = this.scene.physics.add.group();
     this.arms = this.scene.physics.add.group();

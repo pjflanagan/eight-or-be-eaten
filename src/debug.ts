@@ -1,28 +1,32 @@
 import { Phase } from './gameScene/gameManager';
 
 type DebugConfig = {
-  startPhase: Phase;
+  // scene: Scene; TODO: which scene to debug
+  phase?: Phase;
   grid?: boolean;
 }
 
-type DebugConfigLibrary = {
-  [key: string]: DebugConfig
-};
+// type DebugConfigTestName =
+//   'testLayout';
 
-const DEBUG_CONFIG_LIBRARY: DebugConfigLibrary = {
-  testIntro: {
-    startPhase: Phase.GAME_START,
-  },
-  testGame: {
-    startPhase: Phase.GAME_SETUP,
-  },
-  testGameEnd: {
-    startPhase: Phase.GAME_END,
-  },
-  testLayout: {
-    grid: true,
-    startPhase: Phase.GAME_SETUP,
-  }
-}
+// type DebugConfigLibrary = {
+//   [key: DebugConfigTestName]: DebugConfig
+// };
 
-export const DEBUG_CONFIG: DebugConfig | undefined = DEBUG_CONFIG_LIBRARY.testGame;
+// const DEBUG_CONFIG_LIBRARY: DebugConfigLibrary = {
+//   testIntro: {
+//     startPhase: Phase.GAME_START,
+//   },
+//   testGame: {
+//     startPhase: Phase.,
+//   },
+//   testGameEnd: {
+//     startPhase: Phase.GAME_END,
+//   },
+//   testLayout: {
+//     grid: true,
+//     startPhase: Phase.GAME_SETUP,
+//   }
+// }
+
+export const DEBUG_CONFIG: DebugConfig | undefined = undefined;

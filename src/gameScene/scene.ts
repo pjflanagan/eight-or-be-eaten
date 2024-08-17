@@ -47,7 +47,6 @@ export class GameScene extends Phaser.Scene {
     this.audioManager.playTrack();
 
     if (DEBUG_CONFIG?.grid) {
-      // this.add.grid(OFFSET, OFFSET, WIDTH, HEIGHT, FLOOR_SECTION_WIDTH, FLOOR_HEIGHT, undefined, undefined, 0x057605, 0.3).setOrigin(0);
       // this.add.grid(OFFSET, OFFSET, WIDTH, HEIGHT, TILE, TILE, undefined, undefined, 0x057605, 0.1).setOrigin(0);
     }
   }

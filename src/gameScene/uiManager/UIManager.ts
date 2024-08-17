@@ -1,4 +1,4 @@
-import { GameScene } from "../gameScene/scene";
+import { GameScene } from "../scene";
 
 export class UIManager {
   scene: GameScene;

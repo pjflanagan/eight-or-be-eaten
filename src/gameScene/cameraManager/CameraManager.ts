@@ -1,7 +1,7 @@
 import { GameScene } from "../scene";
-import { GAME_HEIGHT, GAME_WIDTH, getXPos, getYPos } from "../../layout";
-import { CAMERA_PAN_DURATION } from "../cutSceneManager";
-import { PlayerObject } from "../../objectsManager";
+import { GAME_HEIGHT, GAME_WIDTH} from '../../config';
+
+const CAMERA_PAN_DURATION = 400;
 
 export class CameraManager {
   private scene: GameScene;
@@ -15,9 +15,8 @@ export class CameraManager {
     this.setZoom(2);
   }
 
-  trackPlayer(player: PlayerObject) {
-    // TODO: consider lerp: (..., true, 0.4, 0.4)
-    this.getCamera().startFollow(player.getSprite());
+  trackSprite(sprite: Phaser.GameObjects.GameObject) {
+    this.getCamera().startFollow(sprite, true, 0.4, 0.4);
   }
   
   getCamera(): Phaser.Cameras.Scene2D.Camera {
@@ -48,15 +47,9 @@ export class CameraManager {
     }
   }
 
-  panCameraToLocation(floor: number, section: number) {
-    this.getCamera().pan(getXPos(section), getYPos(floor), CAMERA_PAN_DURATION);
+  panCameraToLocation(x: number, y: number) {
+    this.getCamera().pan(x, y, CAMERA_PAN_DURATION);
   }
-
-  panCameraToPlayer(callback: Phaser.Types.Cameras.Scene2D.CameraPanCallback) {
-    const player = this.scene.getObjectManager().getPlayer();
-    this.getCamera().pan(player.x, player.y, CAMERA_PAN_DURATION, undefined, undefined, callback);
-  }
-
 }
 
 export function onCameraPanEnd(callback: () => void): Phaser.Types.Cameras.Scene2D.CameraPanCallback {

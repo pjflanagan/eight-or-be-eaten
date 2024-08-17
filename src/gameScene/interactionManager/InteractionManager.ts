@@ -1,4 +1,4 @@
-import { GameScene } from "../gameScene/scene";
+import { GameScene } from "../scene";
 
 type InputDirection = 'up' | 'down' | 'left' | 'right';
 type WASDKey = 'W' | 'A' | 'S' | 'D';
