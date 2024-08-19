@@ -1,5 +1,7 @@
 import Phaser from "phaser";
-import { GameScene } from "./gameScene/scene";
+import PhaserMatterCollisionPlugin from 'phaser-matter-collision-plugin';
+// import { GameScene } from "./gameScene/GameScene";
+import { TestScene } from "./testScene";
 
 export const GAME_WIDTH = 800;
 export const GAME_HEIGHT = 600;
@@ -11,15 +13,34 @@ export const config: Phaser.Types.Core.GameConfig = {
     mode: Phaser.Scale.RESIZE,
     physics: {
         default: 'matter',
+        matter: {
+            enableSleeping: true,
+            gravity: {
+                y: 0,
+                x: 0
+            },
+            debug: {
+                showBody: true,
+                showStaticBody: true
+            }
+        }
     },
     pixelArt: false,
     render: {
         antialias: false,
     },
     scene: [
+        TestScene
         // TitleScene,
         // InstructionsScene,
-        GameScene,
+        // GameScene,
         // EndScene
+    ],
+    plugins: [
+        {
+            plugin: PhaserMatterCollisionPlugin,
+            key: 'matterCollision',
+            mapping: 'matterCollision'
+        }
     ]
 };

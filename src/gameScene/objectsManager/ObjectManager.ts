@@ -1,4 +1,4 @@
-import { GameScene } from "../scene";
+import { GameScene } from "../GameScene";
 import { Arm } from "./objects/Arm";
 
 export class ObjectManager {

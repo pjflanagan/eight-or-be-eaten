@@ -1,5 +1,5 @@
 // import { Fish } from "../objectsManager";
-import { GameScene } from "../scene";
+import { GameScene } from "../GameScene";
 // import { Image } from "./graphics";
 
 export class GraphicsManager {

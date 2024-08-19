@@ -1,4 +1,4 @@
-import { GameScene } from "../scene";
+import { GameScene } from "../GameScene";
 
 enum TrackName {
   TITLE = 'song-title',

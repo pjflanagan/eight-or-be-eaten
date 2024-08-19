@@ -1,4 +1,4 @@
-import { GameScene } from "../scene";
+import { GameScene } from "../GameScene";
 import { GAME_HEIGHT, GAME_WIDTH} from '../../config';
 
 const CAMERA_PAN_DURATION = 400;
